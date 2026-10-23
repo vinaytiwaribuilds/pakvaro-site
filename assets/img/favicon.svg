@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="224" fill="#0A0F1A"/><svg x="192" y="200" width="640" height="606" viewBox="60 70 560 530">
+  <defs>
+    <linearGradient id="pk-top" x1="80" y1="85" x2="605" y2="212" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4F9FF"/>
+      <stop offset="0.55" stop-color="#CFE7FF"/>
+      <stop offset="1" stop-color="#22A6FF"/>
+    </linearGradient>
+    <linearGradient id="pk-left" x1="125" y1="585" x2="338" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EEF6FF"/>
+      <stop offset="0.6" stop-color="#B9DBFF"/>
+      <stop offset="1" stop-color="#5AA9FF"/>
+    </linearGradient>
+    <linearGradient id="pk-right" x1="338" y1="300" x2="590" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F8DFF"/>
+      <stop offset="1" stop-color="#0068FF"/>
+    </linearGradient>
+  </defs>
+  <path d="M80 85H478Q496 85 507 98L605 212H212Z" fill="url(#pk-top)"/>
+  <path d="M338 255L332 426L125 585V452Q125 425 148 406Z" fill="url(#pk-left)"/>
+  <path d="M338 255H520L492 212H605L332 426Z" fill="url(#pk-right)"/>
+  <path d="M492 212H605L550 255H520Z" fill="#0049DB"/>
+</svg></svg>

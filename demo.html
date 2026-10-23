@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A simulated reference portal for tenant-isolated IoT fleet monitoring, alarms and weekly reporting.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Simulated reference portal — Pakvaro</title>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pakvaro.com/demo.html">
+  <meta property="og:title" content="Simulated reference portal — Pakvaro">
+  <meta property="og:description" content="Simulated IoT fleet monitoring with alarms and a weekly report reconciled to the same data. A self-initiated reference build, not a client deployment.">
+  <meta property="og:image" content="https://pakvaro.com/assets/img/og-pakvaro.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pakvaro Device-to-Demo Sprint with a live fleet dashboard preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css?v=202610231922">
+  <script type="module" src="assets/site.js?v=202610231922"></script>
+  <script type="module" src="assets/demo.js?v=202610231922"></script>
+</head>
+<body class="portal-page">
+  <a class="skip-link" href="#main">Skip to portal</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
+
+<header id="site-header" class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="Pakvaro home"><img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32"><img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12"></a><nav class="primary-nav" aria-label="Primary navigation"><a href="index.html">Automation</a><a href="thingsboard.html#what-you-get">What you get</a><a href="thingsboard.html#pricing">Pricing</a><a href="thingsboard.html#integrators">For integrators</a><a href="thingsboard.html#faq">FAQ</a></nav><div class="header-actions"><a class="header-demo" href="demo.html" aria-current="page">ThingsBoard demo</a><a class="button button--primary button--small" data-book href="mailto:hello@pakvaro.com">Book an intro call</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button></div></div></header>
+
+<div id="mobile-menu" class="mobile-menu" hidden><div class="mobile-menu__inner"><nav aria-label="Mobile navigation"><a href="index.html">Automation</a><a href="thingsboard.html#what-you-get">What you get</a><a href="thingsboard.html#pricing">Pricing</a><a href="thingsboard.html#integrators">For integrators</a><a href="thingsboard.html#faq">FAQ</a></nav><div class="mobile-menu__actions"><a class="button button--secondary" href="demo.html" aria-current="page">ThingsBoard demo</a><a class="button button--primary" data-book href="mailto:hello@pakvaro.com">Book an intro call</a></div></div></div>
+
+  <header class="portal-header">
+    <div class="portal-header__brand">
+      <a class="brand" href="index.html" aria-label="Pakvaro home">
+        <img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32">
+        <img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12">
+      </a>
+      <span class="portal-product-name">Monitor</span>
+    </div>
+
+    <div class="portal-header__context" aria-label="Current workspace">
+      <span>Reference workspace</span>
+      <strong>Fleet operations</strong>
+    </div>
+
+    <div class="portal-header__tools">
+      <div class="topbar-tenant">
+        <label for="tenant-select">Tenant</label>
+        <select id="tenant-select" aria-describedby="isolation-label"></select>
+      </div>
+      <span class="simulated-badge"><span aria-hidden="true"></span> Simulated reference data</span>
+      <a class="portal-exit" href="index.html" aria-label="Back to Pakvaro website">Back to site <span aria-hidden="true">↗</span></a>
+      <a class="button button--primary button--small portal-book" data-book href="mailto:hello@pakvaro.com">Book an intro call</a>
+    </div>
+  </header>
+
+  <div class="portal-layout">
+    <aside class="portal-sidebar" aria-label="Portal navigation">
+      <div class="portal-sidebar__section">
+        <span class="sidebar-label">Monitoring</span>
+        <nav class="portal-tabs" role="tablist" aria-label="Reference portal views">
+          <button id="tab-overview" type="button" role="tab" aria-selected="true" aria-controls="panel-overview" data-demo-tab="overview">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="7" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="7" height="6.5" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="6.5" rx="1.5"/></svg>
+            <span>Overview</span>
+          </button>
+          <button id="tab-fleet" type="button" role="tab" aria-selected="false" aria-controls="panel-fleet" tabindex="-1" data-demo-tab="fleet">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h14"/><circle cx="8" cy="6" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="10" cy="18" r="1"/></svg>
+            <span>Devices</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="portal-sidebar__section">
+        <span class="sidebar-label">Reporting</span>
+        <a class="sidebar-link" data-report-link href="report.html?tenant=a" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h9l3 3V20H6zM15 3.5V7h3M9 11h6M9 14h6M9 17h4"/></svg>
+          <span>Weekly report</span>
+        </a>
+      </div>
+
+      <div class="sidebar-note">
+        <div><span class="isolation-dot" aria-hidden="true"></span><strong>Tenant boundary active</strong></div>
+        <p id="isolation-label">Scope: tenant/a</p>
+        <p>Every card, alarm, device row and report is derived from the selected tenant only.</p>
+      </div>
+
+      <a class="button button--primary button--full portal-report-cta" data-report-link href="report.html?tenant=a" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h9l3 3V20H6zM15 3.5V7h3M9 11h6M9 14h6M9 17h4"/></svg>
+        Generate weekly report
+      </a>
+      <p class="portal-sidebar__foot">Simulated reference data<br>Deterministic snapshot · 14 Oct 2026</p>
+    </aside>
+
+    <main class="portal-main" id="main">
+      <section id="panel-overview" data-panel="overview" role="tabpanel" aria-labelledby="tab-overview">
+        <header class="portal-titlebar">
+          <div>
+            <p class="eyebrow">Operations overview</p>
+            <h1>Fleet health</h1>
+            <p><strong id="tenant-name">Demo Tenant A</strong><span aria-hidden="true"> · </span><span id="tenant-descriptor">Cold-room fleet · Warehouse</span></p>
+          </div>
+          <div class="portal-titlebar__meta">
+            <span>Data snapshot</span>
+            <strong data-snapshot>14 Oct 2026, 10:30 am</strong>
+          </div>
+        </header>
+
+        <div class="kpi-grid" aria-label="Current fleet indicators">
+          <article class="kpi-card">
+            <div class="kpi-card__icon kpi-card__icon--ready"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 12 3 3 7-7"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div><span>Devices online</span><strong id="kpi-online">—</strong><small>reporting normally</small></div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-card__icon kpi-card__icon--alarm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a7 7 0 0 0-7 7v3l-1.5 3h17l-1.5-3v-3a7 7 0 0 0-7-7ZM9.5 19a2.8 2.8 0 0 0 5 0"/></svg></div>
+            <div><span>Open alarms</span><strong id="kpi-alarms">—</strong><small>threshold or offline</small></div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18V9M12 18V5M19 18v-6M3 20h18"/></svg></div>
+            <div><span>Weekly readings</span><strong id="kpi-messages">—</strong><small>accepted telemetry</small></div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16.5 9 12l3 2 7-7M16 7h3v3"/></svg></div>
+            <div><span>Data completeness</span><strong id="kpi-completeness">—</strong><small>received ÷ expected</small></div>
+          </article>
+        </div>
+
+        <div class="portal-grid portal-grid--overview">
+          <article class="portal-card chart-card">
+            <header class="portal-card__header">
+              <div><span class="card-kicker">Telemetry · last 24 hours</span><h2 id="chart-title">Probe temperature · fleet mean</h2></div>
+              <strong id="chart-latest" class="chart-latest">—</strong>
+            </header>
+            <canvas id="telemetry-chart" class="telemetry-chart" role="img" aria-label="24-hour fleet telemetry chart"></canvas>
+            <footer class="chart-footnote"><span><i class="line-key line-key--solid"></i>Fleet mean</span><span><i class="line-key line-key--dash"></i>Alert threshold</span><span class="chart-timezone">Asia/Kolkata · hourly</span></footer>
+          </article>
+
+          <article class="portal-card alarm-card">
+            <header class="portal-card__header">
+              <div><span class="card-kicker">Alarm queue</span><h2>Open conditions</h2></div>
+              <span class="count-badge" id="alarm-count">—</span>
+            </header>
+            <ul class="alarm-list" id="alarm-list" aria-live="polite"></ul>
+          </article>
+        </div>
+
+        <article class="portal-card fleet-preview-card">
+          <header class="portal-card__header">
+            <div><span class="card-kicker">Fleet inventory</span><h2>Device status</h2></div>
+            <button class="card-action" type="button" data-open-panel="fleet">View all devices <span aria-hidden="true">→</span></button>
+          </header>
+          <div class="table-wrap">
+            <table class="fleet-table fleet-table--preview">
+              <caption class="sr-only">Current devices belonging only to the selected simulated tenant</caption>
+              <thead><tr><th scope="col">Device</th><th scope="col">Status</th><th scope="col">Latest value</th><th scope="col">Last seen</th><th scope="col">Signal</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead>
+              <tbody id="fleet-preview-body"></tbody>
+            </table>
+          </div>
+          <footer class="tenant-table-foot"><span class="isolation-dot" aria-hidden="true"></span><span data-tenant-table-scope>Only tenant/a records are in view</span></footer>
+        </article>
+      </section>
+
+      <section id="panel-fleet" data-panel="fleet" role="tabpanel" aria-labelledby="tab-fleet" hidden>
+        <header class="portal-titlebar">
+          <div><p class="eyebrow">Device management</p><h1>Provisioned devices</h1><p id="fleet-count">—</p></div>
+          <div class="filter-group" aria-label="Filter devices">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="attention" aria-pressed="false">Needs attention</button>
+            <button type="button" data-filter="online" aria-pressed="false">Online</button>
+          </div>
+        </header>
+        <article class="portal-card fleet-card">
+          <div class="fleet-card__summary">
+            <div><span class="isolation-dot" aria-hidden="true"></span><strong data-fleet-tenant>Demo Tenant A</strong><span data-fleet-scope>tenant/a</span></div>
+            <p>Select a row to inspect the latest payload and verify its tenant boundary.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="fleet-table">
+              <caption class="sr-only">Devices belonging only to the selected simulated tenant</caption>
+              <thead><tr><th scope="col">Device</th><th scope="col">Status</th><th scope="col">Last seen</th><th scope="col">Signal</th><th scope="col">Latest value</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead>
+              <tbody id="fleet-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <footer class="portal-app-footer">
+        <p><strong>Simulated reference data.</strong> Deterministic fixtures demonstrate layout, tenant isolation and report reconciliation; they are not customer results.</p>
+        <nav aria-label="Reference links"><a href="proof.html">Proof boundary</a><a href="privacy.html">Privacy</a><a href="index.html">Pakvaro website</a></nav>
+      </footer>
+    </main>
+  </div>
+
+<footer id="site-footer" class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html"><img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32"><img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12"></a><p>Pakvaro is a sole proprietorship operated by Vinay Tiwari, Indore, India.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="https://app.pakvaro.com/readiness">Payload check</a><a href="demo.html" aria-current="page">Demo</a><a href="proof.html">Proof</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="scope.html">1-page scope</a></nav><a class="footer-email" data-contact data-email href="mailto:hello@pakvaro.com">hello@pakvaro.com</a></div><div class="container footer-bottom"><span>© 2026 Pakvaro.</span><span>Remote ThingsBoard delivery · India &amp; global</span></div></footer>
+
+  <dialog class="device-drawer" id="device-drawer" aria-labelledby="drawer-name">
+    <div class="drawer-header">
+      <div><span class="eyebrow" data-drawer-id>Device</span><h2 id="drawer-name" data-drawer-name>Device detail</h2></div>
+      <button class="drawer-close" type="button" data-drawer-close aria-label="Close device detail"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="drawer-status-line"><span data-drawer-status></span><span>Last seen <strong data-drawer-seen>—</strong></span></div>
+    <dl class="device-stats">
+      <div><dt>Latest reading</dt><dd data-drawer-value>—</dd></div>
+      <div><dt>Humidity</dt><dd data-drawer-humidity>—</dd></div>
+      <div><dt>Telemetry health</dt><dd data-drawer-health>—</dd></div>
+      <div><dt>Signal</dt><dd data-drawer-rssi>—</dd></div>
+    </dl>
+    <div class="drawer-boundary"><span>Tenant boundary</span><strong data-drawer-tenant>—</strong><p>This device record is read from the currently selected tenant only.</p></div>
+    <div class="payload-preview"><span>Canonical payload</span><pre data-drawer-payload>{}</pre></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

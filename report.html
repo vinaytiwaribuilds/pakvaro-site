@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#f7f9fb">
+  <title>Simulated weekly report — Pakvaro</title>
+  <meta name="description" content="A clean printable weekly telemetry report using deterministic simulated reference data.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css?v=202610231922">
+  <script type="module" src="assets/site.js?v=202610231922"></script>
+  <script type="module" src="assets/report.js?v=202610231922"></script>
+</head>
+<body class="report-page">
+  <a class="skip-link" href="#main">Skip to report</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
+
+<header id="site-header" class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="Pakvaro home"><img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32"><img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12"></a><nav class="primary-nav" aria-label="Primary navigation"><a href="index.html">Automation</a><a href="thingsboard.html#what-you-get">What you get</a><a href="thingsboard.html#pricing">Pricing</a><a href="thingsboard.html#integrators">For integrators</a><a href="thingsboard.html#faq">FAQ</a></nav><div class="header-actions"><a class="header-demo" href="demo.html">ThingsBoard demo</a><a class="button button--primary button--small" data-book href="mailto:hello@pakvaro.com">Book an intro call</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button></div></div></header>
+
+<div id="mobile-menu" class="mobile-menu" hidden><div class="mobile-menu__inner"><nav aria-label="Mobile navigation"><a href="index.html">Automation</a><a href="thingsboard.html#what-you-get">What you get</a><a href="thingsboard.html#pricing">Pricing</a><a href="thingsboard.html#integrators">For integrators</a><a href="thingsboard.html#faq">FAQ</a></nav><div class="mobile-menu__actions"><a class="button button--secondary" href="demo.html">ThingsBoard demo</a><a class="button button--primary" data-book href="mailto:hello@pakvaro.com">Book an intro call</a></div></div></div>
+
+  <header class="report-shellbar">
+    <a class="brand" href="index.html" aria-label="Pakvaro home">
+      <img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32">
+      <img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12">
+    </a>
+    <span class="report-shellbar__title">Weekly report preview</span>
+    <div class="report-actions" aria-label="Report actions">
+      <a id="report-back" class="button button--secondary button--small" href="demo.html">Back to portal</a>
+      <button id="print-report" class="button button--primary button--small" type="button">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v6H7z"/></svg>
+        Print / save PDF
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="report-sheet">
+    <header class="report-header">
+      <div>
+        <a class="brand" href="index.html" aria-label="Pakvaro home">
+          <img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32">
+          <img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12">
+        </a>
+        <p>Device-to-Demo Sprint · reference portal output</p>
+      </div>
+      <div class="report-meta">
+        <span class="simulated-badge"><span aria-hidden="true"></span> Simulated reference data</span>
+        <dl>
+          <div><dt>Report ID</dt><dd>PKV-WR-2026-41</dd></div>
+          <div><dt>Generated</dt><dd id="report-generated">14 Oct 2026, 10:30 IST</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <section class="report-title" aria-labelledby="report-tenant">
+      <p class="eyebrow">Weekly fleet report</p>
+      <h1 id="report-tenant">Demo tenant</h1>
+      <p id="report-period">—</p>
+      <div class="report-scope"><span class="isolation-dot" aria-hidden="true"></span><span id="report-scope">Tenant-scoped output</span></div>
+    </section>
+
+    <section class="report-kpis" aria-label="Weekly summary">
+      <article><span>Readings received</span><strong id="report-received">—</strong><small>of <b id="report-expected">—</b> expected</small></article>
+      <article><span>Data completeness</span><strong id="report-completeness">—</strong><small>received ÷ expected</small></article>
+      <article><span>Fleet availability</span><strong id="report-availability">—</strong><small>devices not currently offline</small></article>
+      <article><span>Open alarm events</span><strong id="report-alarms">—</strong><small><b id="report-offline">—</b> offline device</small></article>
+    </section>
+
+    <section class="report-section report-health">
+      <div class="report-section__heading"><div><span class="eyebrow">Data health</span><h2>Weekly coverage</h2></div><p>Half-open reporting window: readings at the end boundary belong to the next report.</p></div>
+      <div class="report-health__grid">
+        <div><div><span>Telemetry completeness</span><strong id="report-completeness-label">—</strong></div><progress id="report-completeness-progress" max="100" value="0" aria-label="Telemetry completeness">0%</progress></div>
+        <div><div><span>Current fleet availability</span><strong id="report-availability-label">—</strong></div><progress id="report-availability-progress" max="100" value="0" aria-label="Current fleet availability">0%</progress></div>
+      </div>
+      <div class="report-stat-pair">
+        <div><span>Fleet mean</span><strong id="report-average">—</strong><small>all accepted readings</small></div>
+        <div><span>Observed range</span><strong id="report-range">—</strong><small>minimum to maximum</small></div>
+      </div>
+    </section>
+
+    <section class="report-section report-alarms">
+      <div class="report-section__heading"><div><span class="eyebrow">Exceptions</span><h2>Alarm events at report close</h2></div><p>Threshold and offline conditions are listed with the device that raised them.</p></div>
+      <div class="table-wrap">
+        <table class="report-table report-alarm-table">
+          <caption class="sr-only">Open simulated alarm events for the selected tenant</caption>
+          <thead><tr><th scope="col">Device</th><th scope="col">Condition</th><th scope="col">Type</th><th scope="col">Age</th><th scope="col">State</th></tr></thead>
+          <tbody id="report-alarm-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="report-section report-ledger">
+      <div class="report-section__heading"><div><span class="eyebrow">Device ledger</span><h2>Received-reading reconciliation</h2></div><p>Each row uses the same deterministic raw series as the portal.</p></div>
+      <div class="table-wrap">
+        <table class="report-table">
+          <caption class="sr-only">Device reading reconciliation for the selected simulated tenant</caption>
+          <thead><tr><th scope="col">Device</th><th scope="col">Current status</th><th scope="col">Readings</th><th scope="col">Weekly mean</th><th scope="col">Completeness</th></tr></thead>
+          <tbody id="report-device-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="report-check">
+      <div class="report-check__mark" aria-hidden="true">✓</div>
+      <div><span class="eyebrow">Deterministic reconciliation</span><h2>Device row totals match the fleet total.</h2><p>Expected = provisioned devices × 168 hourly intervals. Received = count of non-null readings. Completeness = received ÷ expected.</p></div>
+      <strong id="report-reconciliation">—</strong>
+    </section>
+
+    <section class="report-notes">
+      <h2>Scope and interpretation</h2>
+      <ul>
+        <li>This browser-generated report uses deterministic simulated reference data.</li>
+        <li>It demonstrates layout, totals and tenant-scoped output; it is not a customer result or uptime claim.</li>
+        <li>Environmental signals support operational monitoring and are not an engineering certification.</li>
+      </ul>
+    </section>
+
+    <footer class="report-footer">
+      <div><img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12"><p>Pakvaro is a sole proprietorship operated by Vinay Tiwari, Indore, India.</p></div>
+      <div><span>Simulated reference data</span><span>Reference report · 14 Oct 2026</span></div>
+    </footer>
+  </main>
+
+<footer id="site-footer" class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html"><img class="brand-mark" src="assets/img/mark.svg" alt="" width="32" height="32"><img class="wordmark" src="assets/img/wordmark.png" alt="Pakvaro" width="155" height="12"></a><p>Pakvaro is a sole proprietorship operated by Vinay Tiwari, Indore, India.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="https://app.pakvaro.com/readiness">Payload check</a><a href="demo.html">Demo</a><a href="proof.html">Proof</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="scope.html">1-page scope</a></nav><a class="footer-email" data-contact data-email href="mailto:hello@pakvaro.com">hello@pakvaro.com</a></div><div class="container footer-bottom"><span>© 2026 Pakvaro.</span><span>Remote ThingsBoard delivery · India &amp; global</span></div></footer>
+</body>
+</html>
